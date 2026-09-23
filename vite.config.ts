@@ -1,12 +1,72 @@
-import { defineConfig, lazyPlugins } from "vite-plus";
-import react from "@vitejs/plugin-react";
-// @ts-expect-error type error without @types/node package
 import process from "node:process";
+
+import tailwindcss from "@tailwindcss/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig, lazyPlugins } from "vite-plus";
+
 const host = process.env.TAURI_DEV_HOST;
 
 // https://vite.dev/config/
-export default defineConfig(() => ({
-  plugins: lazyPlugins(() => [react()]),
+export default defineConfig({
+  fmt: {
+    printWidth: 100,
+    tabWidth: 2,
+    useTabs: false,
+
+    semi: true,
+    singleQuote: false,
+    trailingComma: "all",
+
+    sortImports: true,
+
+    sortTailwindcss: true,
+
+    ignorePatterns: ["src/routeTree.gen.ts"],
+  },
+  lint: {
+    categories: {
+      correctness: "error",
+    },
+    rules: {
+      "no-unused-vars": [
+        "error",
+        {
+          fix: {
+            imports: "safe-fix",
+            variables: "off",
+          },
+        },
+      ],
+      "vite-plus/prefer-vite-plus-imports": "error",
+    },
+    ignorePatterns: ["public/favicon.svg", "src/routeTree.gen.ts"],
+    options: {
+      typeAware: true,
+      typeCheck: true,
+    },
+    jsPlugins: [
+      {
+        name: "vite-plus",
+        specifier: "vite-plus/oxlint-plugin",
+      },
+    ],
+  },
+  plugins: lazyPlugins(() => [
+    tanstackRouter({
+      target: "react",
+      autoCodeSplitting: true,
+    }),
+    tailwindcss(),
+    react({
+      compiler: true,
+    }),
+  ]),
+
+  /* Aliasing */
+  resolve: {
+    tsconfigPaths: true,
+  },
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
@@ -29,4 +89,4 @@ export default defineConfig(() => ({
       ignored: ["**/src-tauri/**"],
     },
   },
-}));
+});
