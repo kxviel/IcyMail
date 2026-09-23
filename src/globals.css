@@ -7,7 +7,7 @@
 
 @theme inline {
 	--font-heading: var(--font-sans);
-	--font-sans: "Inter Variable", sans-serif;
+	--font-sans: 'Inter Variable', sans-serif;
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -50,42 +50,73 @@
 
 :root {
 	color-scheme: light;
-	--background: light-dark(#f7f7fa, #141419);
-	--foreground: light-dark(#262630, #e7e5ed);
-	--card: light-dark(#ffffff, #1c1c24);
-	--card-foreground: var(--foreground);
-	--popover: light-dark(var(--card), #22222c);
-	--popover-foreground: var(--foreground);
-	--primary: light-dark(#6952b8, #b6a1ee);
-	--primary-foreground: light-dark(#ffffff, #211831);
-	--secondary: light-dark(#ecebf2, #262530);
-	--secondary-foreground: light-dark(#46434f, #d2cedf);
-	--muted: light-dark(#eeedf3, #22222b);
-	--muted-foreground: light-dark(#686574, #a29eaf);
-	--accent: light-dark(#e8e3f5, #30283f);
-	--accent-foreground: light-dark(#59439f, #d2bffa);
-	--destructive: light-dark(#bc354d, #f18b9b);
-	--border: light-dark(#dedde6, #2c2b36);
-	--input: light-dark(#cccad7, #45414f);
-	--ring: light-dark(#8068cb, #b6a1ee);
-	--chart-1: light-dark(#6952b8, #b6a1ee);
-	--chart-2: light-dark(#3e7e85, #7bb9ba);
-	--chart-3: light-dark(#aa7533, #d4ae75);
-	--chart-4: light-dark(#b65075, #db95b0);
-	--chart-5: light-dark(#6271ad, #96a5df);
-	--radius: 0;
-	--sidebar: var(--card);
-	--sidebar-foreground: var(--foreground);
-	--sidebar-primary: var(--primary);
-	--sidebar-primary-foreground: var(--primary-foreground);
-	--sidebar-accent: var(--accent);
-	--sidebar-accent-foreground: var(--accent-foreground);
-	--sidebar-border: var(--border);
-	--sidebar-ring: var(--ring);
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.145 0 0);
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.145 0 0);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.145 0 0);
+	--primary: oklch(0.52 0.105 223.128);
+	--primary-foreground: oklch(0.984 0.019 200.873);
+	--secondary: oklch(0.967 0.001 286.375);
+	--secondary-foreground: oklch(0.21 0.006 285.885);
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.205 0 0);
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: oklch(0.922 0 0);
+	--input: oklch(0.922 0 0);
+	--ring: oklch(0.708 0 0);
+	--chart-1: oklch(0.87 0 0);
+	--chart-2: oklch(0.556 0 0);
+	--chart-3: oklch(0.439 0 0);
+	--chart-4: oklch(0.371 0 0);
+	--chart-5: oklch(0.269 0 0);
+	--radius: 0.625rem;
+	--sidebar: oklch(0.985 0 0);
+	--sidebar-foreground: oklch(0.145 0 0);
+	--sidebar-primary: oklch(0.609 0.126 221.723);
+	--sidebar-primary-foreground: oklch(0.984 0.019 200.873);
+	--sidebar-accent: oklch(0.97 0 0);
+	--sidebar-accent-foreground: oklch(0.205 0 0);
+	--sidebar-border: oklch(0.922 0 0);
+	--sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
 	color-scheme: dark;
+	--background: oklch(0.145 0 0);
+	--foreground: oklch(0.985 0 0);
+	--card: oklch(0.205 0 0);
+	--card-foreground: oklch(0.985 0 0);
+	--popover: oklch(0.205 0 0);
+	--popover-foreground: oklch(0.985 0 0);
+	--primary: oklch(0.45 0.085 224.283);
+	--primary-foreground: oklch(0.984 0.019 200.873);
+	--secondary: oklch(0.274 0.006 286.033);
+	--secondary-foreground: oklch(0.985 0 0);
+	--muted: oklch(0.269 0 0);
+	--muted-foreground: oklch(0.708 0 0);
+	--accent: oklch(0.269 0 0);
+	--accent-foreground: oklch(0.985 0 0);
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: oklch(1 0 0 / 10%);
+	--input: oklch(1 0 0 / 15%);
+	--ring: oklch(0.556 0 0);
+	--chart-1: oklch(0.87 0 0);
+	--chart-2: oklch(0.556 0 0);
+	--chart-3: oklch(0.439 0 0);
+	--chart-4: oklch(0.371 0 0);
+	--chart-5: oklch(0.269 0 0);
+	--sidebar: oklch(0.205 0 0);
+	--sidebar-foreground: oklch(0.985 0 0);
+	--sidebar-primary: oklch(0.715 0.143 215.221);
+	--sidebar-primary-foreground: oklch(0.302 0.056 229.695);
+	--sidebar-accent: oklch(0.269 0 0);
+	--sidebar-accent-foreground: oklch(0.985 0 0);
+	--sidebar-border: oklch(1 0 0 / 10%);
+	--sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
@@ -93,7 +124,7 @@
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground antialiased;
+		@apply antialiased bg-background text-foreground;
 	}
 	button:not(:disabled),
 	[role="button"]:not(:disabled) {
@@ -102,5 +133,8 @@
 	html {
 		@apply font-sans;
 		scrollbar-gutter: stable;
+	}
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
 	}
 }
