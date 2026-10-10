@@ -125,6 +125,8 @@
 	}
 	body {
 		@apply antialiased bg-background text-foreground;
+		margin: 0;
+		overflow: hidden;
 	}
 	button:not(:disabled),
 	[role="button"]:not(:disabled) {
@@ -132,9 +134,48 @@
 	}
 	html {
 		@apply font-sans;
-		scrollbar-gutter: stable;
+		background: var(--background);
 	}
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;
+	}
+}
+
+@layer components {
+	.tiptap {
+		min-height: 100%;
+	}
+
+	.tiptap p {
+		margin: 0 0 0.85rem;
+	}
+
+	.tiptap ul,
+	.tiptap ol {
+		margin: 0.75rem 0;
+		padding-left: 1.4rem;
+	}
+
+	.tiptap ul {
+		list-style: disc;
+	}
+
+	.tiptap ol {
+		list-style: decimal;
+	}
+
+	.tiptap blockquote {
+		border-left: 2px solid var(--primary);
+		color: var(--muted-foreground);
+		margin: 1rem 0;
+		padding-left: 1rem;
+	}
+
+	.tiptap p.is-editor-empty:first-child::before {
+		color: var(--muted-foreground);
+		content: "Write your message…";
+		float: left;
+		height: 0;
+		pointer-events: none;
 	}
 }

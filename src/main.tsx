@@ -22,7 +22,7 @@ declare module "@tanstack/react-router" {
 const rootElement = document.getElementById("root") as HTMLElement;
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <ThemeProvider defaultTheme="system" storageKey="crystal-index-theme">
+    <ThemeProvider defaultTheme="system" storageKey="icy-mail-theme">
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
         <Toaster />

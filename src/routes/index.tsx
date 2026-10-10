@@ -1,11 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import Materials from "@/pages/Materials";
+import Mail from "@/pages/Mail";
 
 export const Route = createFileRoute("/")({
-  component: MaterialsComponent,
+  component: Mail,
 });
-
-function MaterialsComponent() {
-  return <Materials />;
-}
